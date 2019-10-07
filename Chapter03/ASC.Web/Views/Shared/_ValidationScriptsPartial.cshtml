@@ -1,4 +1,13 @@
-﻿<environment names="Development">
+﻿@{ 
+    //! This page is used to load different script files based on the environment. 
+    //! In our development environment, we simply want to get the local javascript pages without
+    //! going to the web and getting the pages that are stored in the cloud.  However,
+    //! in Staging and Production environments, we need to attempt to get the pages
+    //! that are in the cloud, but if they don't exist, then we will use the local javascript that
+    //! is on the server where the application is being hosted.
+}
+
+<environment names="Development">
     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
 </environment>
