@@ -1,4 +1,9 @@
 ﻿@{
+
+    //? Again we will be using the same MasterLayout with this layout page.  This page will be used for
+    //? the account profile and internal pages for the members of the website. This layout will be diferent
+    //? than the layout tht we will use for the homepage and is a more "functional" layout than the layout
+    //? that we use for the homepage and information pages.  This is very standard in most web applications.
     Layout = "_MasterLayout";
 }
 
@@ -13,7 +18,9 @@
         </div>
     </nav>
 
-    <!-- Side NavBar -->
+    <!-- Side NavBar --> <!-- This is the bar on the left side of the page with all the links. We want this to 
+                             exist for all the pages where the members of the website work. It allows for easy
+                             navigation from page to page without having to look in different places -->
     <ul id="nav-mobile" class="side-nav fixed">
         <li>
             <div class="userView">
@@ -51,12 +58,20 @@
 <main class="secureLayout">
     <div class="row margin-bottom-0px">
         <div class="col s12">
+            <!--This is where the view pages will be rendered in this layout.  This is actually just a small section
+                of the layout that is on the right side.  The Dashboard view that is created in this chapter will 
+                only display text in this area, but you can see where other views will be displayed.-->
             @RenderBody()
         </div>
     </div>
 </main>
 
-<!-- Footer -->
+<!-- Footer --> <!--The footer of this layout. Like most footers for web pages it has links that will take us to
+                    different areas of the same web application. In this case it provides links for memebers that
+                    is different than the current "dashboard" management area.  Usually, each of these areas
+                    will use different layouts also, as they provide different services for the member.  
+                    We also put copyrites and other company information in the footer. Then we are insured
+                    that each of the views that use this layout will have that information for legal reasons.-->
 <footer class="page-footer blue-grey lighten-1 secureLayout">
     <div class="row">
         <div class="col l6 s12">

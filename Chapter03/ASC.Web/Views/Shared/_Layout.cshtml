@@ -49,6 +49,13 @@
 <main>
     <div class="row margin-bottom-0px">
         <div class="col s12 padding-0px">
+            <!-- This is where the views will be loaded in this layout file. Since this is the _Layout.cshtml, this
+                will be the default layout page for all of our views unless we specify directly another layout inside
+                of the view. In this chapter we will be using this layout for all views except for the /Home/Dashboard
+                view, which will use the _SecureLayout.cshtml that is made.
+                
+                NOTE: we do not have to directly tell views to use this layout, because of the name, the .Net compiler
+                already knows that this should be used.-->
             @RenderBody()
         </div>
     </div>
