@@ -1,4 +1,31 @@
-﻿@using Microsoft.Extensions.Options;
+﻿@* 
+    The Master Layout Page is used to create a consistent "flow" for all of your website pages.
+    The master page has the following possible sections:
+
+    ------------------------------------------------------------------------------------ 
+    Nav:
+        Nav tags are generally used for navigation bar. We can add links to navigate between the pages.
+
+    @RenderSection:
+        Render section is just like a place holder where we can place our code that we can inject from the content page. If we make render section property true, we must need to add this section in all the pages which are used in this layout page, otherwise it will go through as a not implemented error. If we want to make this an option, we need to set it to false.
+
+    @RenderBody:
+        RenderBody is a place holder to display the content of the View.
+
+    Header & Footer:
+        These are useful to display the header and footer information.
+    ------------------------------------------------------------------------------------ 
+
+    A typical site might have one or two master pages (maybe one page for public facing, 
+    unauthenticated, and a second page for internal, authenticated pages). 
+    
+    Master pages will have sections like header, body, footer. 
+    You often have branding on them, as well as nav bars and even news sections, 
+    blog posts, or whatever else you normally have in surrounding content.
+
+*@
+
+@using Microsoft.Extensions.Options;
 @using ASC.Web.Configuration;
 @inject IOptions<ApplicationSettings> _configurationSettings
 
@@ -17,12 +44,21 @@
 </head>
 <body>
     <!-- Render Body -->
+    @* 
+        This is where the html from our Views will be displayed in the "master layout".
+        This means that when are on the /home/index page, the Index.cshtml file will be added
+        to this file in this spot.
+    *@
     @RenderBody()
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/materialize.min.js"></script>
     <script src="~/js/init.js"></script>
 
+    <!-- 
+        This is where we will render all of our scripts for the page. Scripts are code files that allow for the
+        page to have logic and provide a more interesting user experience.
+    -->
     @RenderSection("Scripts", required: false)
 </body>
 </html>

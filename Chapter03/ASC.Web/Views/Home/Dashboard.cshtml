@@ -1,5 +1,7 @@
-﻿@{
-    Layout = "_SecureLayout";
+﻿@{//? As we are using multiple layouts, but we want to use the _SecureLayout specificially for this
+  //? page, we need to specify this direclty.  Without doing this, it will use the _Layout.cshtml by
+  //? default.
+  Layout = "_SecureLayout"; //! if you comment this out and load the /home/dashboard/ page, you will see the normal layout
 }
 <div class="section">
     <div class="row">

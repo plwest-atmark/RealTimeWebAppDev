@@ -1,4 +1,12 @@
-﻿@{ 
+﻿
+@{ //? This is where we are able to "reference" the _MasterLayout for the base
+   //? layout of this page.  That means, it will use the _MasterLayout and be rendered inside of the 
+   //? @RenderBody() of the _MasterLayout page.
+   //! NOTE: This _Layout page also has a @RenderBody() which will then be used for loading the
+   //!       the views (Index.cshtml, About.cshtml, etc.)  We do not have to tell the views that
+   //!       this is the layout that they should use, unless we want to have different layouts
+   //!       then it is important to tell the views which layout to use.  This _Layout would be used
+   //!       by default for all views even if we had multiple layouts we want to use.
     Layout = "_MasterLayout";
 }
 <header>
