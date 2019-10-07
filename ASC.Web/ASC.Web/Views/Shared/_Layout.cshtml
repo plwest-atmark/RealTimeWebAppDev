@@ -1,3 +1,7 @@
+﻿@using Microsoft.Extensions.Options;
+@using ASC.Web.Configuration;
+@inject IOptions<ApplicationSettings> _configurationSettings
+
 @inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
 <!DOCTYPE html>
 <html>
@@ -28,7 +32,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">ASC.Web</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">
+                    @_configurationSettings.Value.ApplicationTitle
+                </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
