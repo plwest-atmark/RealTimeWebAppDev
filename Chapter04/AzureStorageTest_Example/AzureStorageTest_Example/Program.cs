@@ -2,22 +2,51 @@
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AzureStorageTest
+namespace AzureStorageTest_Example
 {
     class Program
     {
         static void Main()
         {
+
+            Book book;
+            //! -------------------------- Part 1 - Basic use of Azure Storage --------------------------
+
+            // Azure Storage Account and Table Service Instances 
+            CloudStorageAccount storageAccount;
+            CloudTableClient tableClient;
+
+            // Connnect to Storage Account 
+            storageAccount = CloudStorageAccount.Parse("UseDevelopmentStorage=true");
+            // Create the Table 'Book', if it not exists 
+            tableClient = storageAccount.CreateCloudTableClient();
+            CloudTable table = tableClient.GetTableReference("Book");
+            table.CreateIfNotExistsAsync();
+
+            // Create a Book instance 
+            book = new Book() { Author = "Rami", BookName = "ASP.NET Core With Azure", Publisher = "APress" };
+            book.BookId = 1;
+            book.RowKey = book.BookId.ToString();
+            book.PartitionKey = book.Publisher;
+            book.CreatedDate = DateTime.UtcNow;
+            book.UpdatedDate = DateTime.UtcNow;
+            // Insert and execute operations 
+            TableOperation insertOperation = TableOperation.Insert(book);
+            table.ExecuteAsync(insertOperation);
+
+            Console.ReadLine();
+
+            //! -------------------------- Part 2 - Unit of Work Pattern --------------------------
+
             Task.Run(async () =>
             {
                 using (var _unitOfWork = new UnitOfWork("UseDevelopmentStorage=true;"))
                 {
                     var bookRepository = _unitOfWork.Repository<Book>();
                     await bookRepository.CreateTableAsync();
-                    Book book = new Book() { Author = "Rami", BookName = "ASP.NET Core With Azure", Publisher = "APress" };
+                    book = new Book() { Author = "Rami", BookName = "ASP.NET Core With Azure", Publisher = "APress" };
                     book.BookId = 1;
                     book.RowKey = book.BookId.ToString();
                     book.PartitionKey = book.Publisher;
@@ -59,32 +88,5 @@ namespace AzureStorageTest
                 }
             }).GetAwaiter().GetResult();
         }
-    }
-
-    public class BaseEntity : TableEntity
-    {
-        public bool IsDeleted { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime UpdatedDate { get; set; }
-        public string CreatedBy { get; set; }
-        public string UpdatedBy { get; set; }
-    }
-
-    public class Book : BaseEntity, IAuditTracker
-    {
-        public Book()
-        {
-        }
-
-        public Book(int bookid, string publisher)
-        {
-            this.RowKey = bookid.ToString();
-            this.PartitionKey = publisher;
-        }
-
-        public int BookId { get; set; }
-        public string BookName { get; set; }
-        public string Author { get; set; }
-        public string Publisher { get; set; }
     }
 }

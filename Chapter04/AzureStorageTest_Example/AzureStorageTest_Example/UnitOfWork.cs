@@ -1,12 +1,12 @@
-﻿using ASC.DataAccess.Interfaces;
-using Microsoft.WindowsAzure.Storage.Table;
+﻿using Microsoft.WindowsAzure.Storage.Table;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ASC.DataAccess
+namespace AzureStorageTest_Example
 {
+ 
     public class UnitOfWork : IUnitOfWork
     {
         //? Used to determine of this unit of work is disposed. This is due to the IDisposable interface use.
@@ -46,7 +46,7 @@ namespace ASC.DataAccess
         /// </summary>
         public void CommitTransaction()
         {
-            // if (disposed) throw new ObjectDisposedException("TransactionScope");
+           // if (disposed) throw new ObjectDisposedException("TransactionScope");
             complete = true;
         }
 

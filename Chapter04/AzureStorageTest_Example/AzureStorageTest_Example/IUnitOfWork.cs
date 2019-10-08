@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ASC.DataAccess.Interfaces
+namespace AzureStorageTest_Example
 {
+
     /// <summary>
     /// The interface for our Unit of Work. This will be used to create a Unit of Work class that
     /// will manage all transactions on the database. Upon failure, the Queue of RollbackActions should

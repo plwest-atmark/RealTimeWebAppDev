@@ -1,16 +1,13 @@
-﻿using ASC.DataAccess.Interfaces;
-using ASC.Models.BaseTypes;
-using ASC.Utilities;
-using Microsoft.WindowsAzure.Storage;
+﻿using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 
-namespace ASC.DataAccess
+namespace AzureStorageTest_Example
 {
+
     public class Repository<T> : IRepository<T> where T : TableEntity, new()
     {
         private readonly CloudStorageAccount storageAccount;
@@ -34,6 +31,7 @@ namespace ASC.DataAccess
             this.storageTable = table;
             this.Scope = scope;
         }
+
 
         /// <summary>
         /// Method to create an "Add"(Insert) entry into the database.
@@ -86,7 +84,7 @@ namespace ASC.DataAccess
 
             //! NOTE, the book says TableOperation.Replace...
             //! This should be TableOperation.Delete instead as we are creating a delete operation.
-            TableOperation deleteOperation = TableOperation.Delete(entityToDelete);
+            TableOperation deleteOperation = TableOperation.Delete(entityToDelete); 
             await ExecuteAsync(deleteOperation);
         }
 
@@ -134,6 +132,7 @@ namespace ASC.DataAccess
 
             return result;
         }
+
 
         /// <summary>
         /// Method for retrieving ONE item from the database determined by the
@@ -185,6 +184,9 @@ namespace ASC.DataAccess
                 await auditTable.CreateIfNotExistsAsync();
             }
         }
+
+
+
 
         /// <summary>
         /// If our "transaction" fails in our unit of work then we want to create operations

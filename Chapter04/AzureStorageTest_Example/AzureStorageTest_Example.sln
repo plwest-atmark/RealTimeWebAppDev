@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26403.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureStorageTest", "AzureStorageTest\AzureStorageTest.csproj", "{4A84874F-B38E-42B1-BB4F-C741FBFF92C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureStorageTest_Example", "AzureStorageTest_Example\AzureStorageTest_Example.csproj", "{4A84874F-B38E-42B1-BB4F-C741FBFF92C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C22022DC-BD0D-4F42-9EAD-BBB2131A41CD}
 	EndGlobalSection
 EndGlobal

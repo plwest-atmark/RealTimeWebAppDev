@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AzureStorageTest
+namespace AzureStorageTest_Example
 {
     public interface IAuditTracker
     {
