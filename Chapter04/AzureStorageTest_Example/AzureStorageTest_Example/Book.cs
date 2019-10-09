@@ -33,9 +33,17 @@ namespace AzureStorageTest_Example
             this.PartitionKey = publisher;
         }
 
-        public int BookId { get; set; }
+        public int BookId
+        {
+            get { return Int32.Parse(base.RowKey); }
+            set { base.RowKey = value.ToString(); }
+        }
         public string BookName { get; set; }
         public string Author { get; set; }
-        public string Publisher { get; set; }
+        public string Publisher
+        {
+            get { return base.PartitionKey; }
+            set { base.PartitionKey = value; }
+        }
     }
 }

@@ -11,17 +11,28 @@ namespace AzureStorageTest_Example
     {
         //? Used to determine of this unit of work is disposed. This is due to the IDisposable interface use.
         private bool disposed;
+
+
+
         //? flag used to determine if a unit of work completed. We check this when
         //? we "dispose" the unit of work, and if we did not complete the transaction we
         //? will preform the rollback operations.
         private bool complete;
+
+
+
         //? The connection string for the Azure Storage, this will be gotten from the configuration
         //? and injected into the constructor of the unit of work.
         public string ConnectionString { get; set; }
+
+
         //? Our unit of work will store all repositories(of objects) that will be used
         //? in a given transaction or "unit of work".  This allows the unit of work to 
         //? be independent of anything else and handle all repository actions.
         private Dictionary<string, object> _repositories;
+
+
+
         //? For each of our "actions" we will create a "rollback" action in case of transaction failure.
         //? We will use a queue so first in / first out operations will be performed in the correct order.
         public Queue<Task<Action>> RollbackActions { get; set; }

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AzureStorageTest_Example.BaseEntity">
+    <Position X="14.5" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAQIAAAE=</HashCode>
+      <FileName>BaseEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AzureStorageTest_Example.Book">
+    <Position X="14.5" Y="5.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAQAAAAAiAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Book.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AzureStorageTest_Example.Repository&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="1" Width="2.25" />
+    <AssociationLine Name="storageAccount" Type="Microsoft.WindowsAzure.Storage.CloudStorageAccount" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.562" Y="4.219" />
+        <Point X="5.562" Y="4.715" />
+        <Point X="1.875" Y="4.715" />
+        <Point X="1.875" Y="5.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="storageTable" Type="Microsoft.WindowsAzure.Storage.Table.CloudTable" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.562" Y="4.219" />
+        <Point X="5.562" Y="4.594" />
+        <Point X="5.562" Y="4.594" />
+        <Point X="5.562" Y="5.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="tableClient" Type="Microsoft.WindowsAzure.Storage.Table.CloudTableClient" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.562" Y="4.219" />
+        <Point X="5.562" Y="4.716" />
+        <Point X="10.406" Y="4.716" />
+        <Point X="10.406" Y="5.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAACIAAAgASBEACAACAAgACAAAAAAAIMA=</HashCode>
+      <FileName>Repository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="storageAccount" />
+      <Field Name="storageTable" />
+      <Field Name="tableClient" />
+      <Property Name="Scope" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AzureStorageTest_Example.UnitOfWork" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAIAIiAAAAAIAAACAAAAAAAAAAAAACAAAAAAIAA=</HashCode>
+      <FileName>UnitOfWork.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AzureStorageTest_Example.ObjectExtension">
+    <Position X="16.75" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.WindowsAzure.Storage.CloudStorageAccount">
+    <Position X="0.5" Y="5.25" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.WindowsAzure.Storage.Table.CloudTable">
+    <Position X="4" Y="5.25" Width="3.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.WindowsAzure.Storage.Table.CloudTableClient">
+    <Position X="7.75" Y="5.25" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="AzureStorageTest_Example.IAuditTracker" Collapsed="true">
+    <Position X="16.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AuditTracker.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AzureStorageTest_Example.IRepository&lt;T&gt;">
+    <Position X="1.75" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACBEACAAAAAgAAAAAAAAAAIA=</HashCode>
+      <FileName>IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AzureStorageTest_Example.IUnitOfWork">
+    <Position X="8.25" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAIAAAAAAAAAACAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>IUnitOfWork.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
