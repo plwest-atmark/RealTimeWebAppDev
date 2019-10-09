@@ -51,7 +51,27 @@ namespace ASC.Web
             services.AddOptions();
             services.Configure<ApplicationSettings>(Configuration.GetSection("AppSettings"));
 
-			services.AddDistributedMemoryCache();
+
+            //  The Distributed Memory Cache(AddDistributedMemoryCache) is a framework - 
+            //      provided implementation of IDistributedCache that stores items in memory.
+            //      The Distributed Memory Cache isn't an actual distributed cache. 
+            //      Cached items are stored by the app instance on the server where the app is running.
+
+            //  The Distributed Memory Cache is a useful implementation:
+            //      1.) In development and testing scenarios.
+            //      2.) When a single server is used in production and memory consumption isn't an issue. 
+            //          Implementing the Distributed Memory Cache abstracts cached data storage.  
+            //          It allows for implementing a true distributed caching solution in the future if multiple 
+            //          nodes or fault tolerance become necessary.
+           
+            //  This app makes use of the Distributed Memory Cache when the app is run in the Development environment.
+            services.AddDistributedMemoryCache();
+
+            //  Session state is an ASP.NET Core scenario for storage of user data while the user browses a web app.Session 
+            //      state uses a store maintained by the app to persist data across requests from a client.
+            //      The session data is backed by a cache and considered ephemeral data—the site should continue to 
+            //      function without the session data. Critical application data should be stored in the user database and 
+            //      cached in session only as a performance optimization.
             services.AddSession();
             services.AddMvc();
 

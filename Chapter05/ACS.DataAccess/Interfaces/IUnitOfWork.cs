@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace ASC.DataAccess.Interfaces
 {
-    public interface IUnitOfWork
+    /// <summary>
+    /// The interface for our Unit of Work. This will be used to create a Unit of Work class that
+    /// will manage all transactions on the database. Upon failure, the Queue of RollbackActions should
+    /// be executed to ensure the database returns to a normal state.
+    /// </summary>
+    public interface IUnitOfWork : IDisposable
     {
         Queue<Task<Action>> RollbackActions { get; set; }
         string ConnectionString { get; set; }

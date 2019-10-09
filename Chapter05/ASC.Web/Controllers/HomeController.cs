@@ -21,10 +21,16 @@ namespace ASC.Web.Controllers
 
         public IActionResult Index()
         {
-            // Set Session
+            // Set Session - Since we are needing to test the session state, we need to ensure that a session state is 
+            // created and set.
             HttpContext.Session.SetSession("Test", _settings.Value);
-            // Get Session
-            var settings = HttpContext.Session.GetSession<ApplicationSettings>("Test");
+
+            // Get Session - As an example on how to reteive a session based on the "key" for that session.
+            //  since we just set the session with the "key" Test, we can get the same session using this value.
+            //  this is not neccessary and is only left here as an example.
+            //var settings = HttpContext.Session.GetSession<ApplicationSettings>("Test");
+
+
             // Usage of IOptions
             ViewBag.Title = _settings.Value.ApplicationTitle;
             return View();
