@@ -48,3 +48,39 @@ textarea {
         display: none;
     }
 }
+
+/* Remove padding*/
+.padding-0px {
+    padding: 0px !important;
+}
+
+/* Make logo fit in the header*/
+.nav-wrapper .brand-logo img {
+    height: 64px;
+}
+
+@media (max-width: 600px) {
+    .nav-wrapper .brand-logo img{
+        height: 56px;
+    }
+}
+
+/*Adjusting padding to display Side Nav*/
+header.secureLayout, main.secureLayout, footer.secureLayout{
+    padding-left: 0;
+}
+
+@media only screen and (max-width: 992px) {
+    header.secureLayout, main.secureLayout, footer.secureLayout{
+        padding-left: 0;
+    }
+}
+
+/*Selected Menu Item style*/
+.side-nav li.active{
+    background-color:#f5f5f5;
+}
+
+.margin-bottom-0px{
+    margin-bottom : 0px;
+}

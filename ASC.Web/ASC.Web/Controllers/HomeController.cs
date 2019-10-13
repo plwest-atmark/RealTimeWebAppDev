@@ -41,5 +41,10 @@ namespace ASC.Web.Controllers
         {
             return View();
         }
+
+        public IActionResult Dashboard()
+        {
+            return View();
+        }
     }
 }
