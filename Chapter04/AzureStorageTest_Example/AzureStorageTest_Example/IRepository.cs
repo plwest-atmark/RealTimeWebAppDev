@@ -16,11 +16,22 @@ namespace AzureStorageTest_Example
     /// <typeparam name="T"></typeparam>
     public interface IRepository<T> where T : TableEntity
     {
+        // C - Create an entry in the database.
         Task<T> AddAsync(T entity);
-        Task<T> UpdateAsync(T entity);
-        Task DeleteAsync(T entity);
+
+        // R - Retrieve an entry from the database
         Task<T> FindAsync(string partitionKey, string rowKey);
+        // R - Retrieve many entries from the database
         Task<IEnumerable<T>> FindAllAsync(string partitionkey);
+
+        // U - Update an entry in the database
+        Task<T> UpdateAsync(T entity);
+
+        // D - Delete an entry from the database
+        Task DeleteAsync(T entity);
+
+
+
         Task CreateTableAsync();
     }
 }

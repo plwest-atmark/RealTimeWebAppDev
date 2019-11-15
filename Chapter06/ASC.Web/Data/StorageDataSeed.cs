@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace ASC.Web.Data
 {
+    /// <summary>
+    /// Interface for our IdentitySeed. This is a contract that we will place upon our Identity "Seed" for
+    /// creating the initial users for the application.  
+    /// </summary>
     public interface IIdentitySeed
     {
         Task Seed(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IOptions<ApplicationSettings> options);
@@ -34,7 +38,7 @@ namespace ASC.Web.Data
                 }
             }
 
-            // Create admin if he is not existed
+            // Create admin if they do not exist
             var admin = await userManager.FindByEmailAsync(options.Value.AdminEmail);
             if (admin == null)
             {

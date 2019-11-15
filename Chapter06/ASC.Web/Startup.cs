@@ -49,6 +49,11 @@ namespace ASC.Web
             {
                 options.User.RequireUniqueEmail = true;
             })
+            // Using the appsettings.json file we will setup our tables for our IdentityUser information.
+            // this is configured based on the needs of the application and can be configured in many
+            // different ways.  The method used here creates tables that are prefixed with "ASC"
+            // and use the development storage area (this will be our Emulated Azure Cloud Storage on our
+            //                                       development machines).
             .AddAzureTableStores<ApplicationDbContext>(new Func<IdentityConfiguration>(() =>
             {
                 IdentityConfiguration idconfig = new IdentityConfiguration();
@@ -70,7 +75,15 @@ namespace ASC.Web
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+
+
+            // We add the IdentitySeed injection in our configuration to return
+            // our custom IdentitySeed class that we created previously. This will then ensure
+            // that when our Accounts are created when our application starts.  Note that this only
+            // happens when the web application first starts. Afterwards, any adjustments to the
+            // users and user roles will be managed by custom code that we will create later.
             services.AddSingleton<IIdentitySeed, IdentitySeed>();
+
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
@@ -111,6 +124,16 @@ namespace ASC.Web
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
+
+            //? Now that we have our IdentityUser information and have configured the dependecy injection for our
+            //? concrete implementation that does the work for seeding the database, we execute the seeding of the
+            //? database in this configure method.
+            //
+            //! NOTE: We are using the app.ApplicationServices to retrieve the ApplicationUser, IdentityRole,
+            //!       and ApplicationSettiings that we configured in the "ConfigureServices" method above.
+            //!       This means that we can easily change how the database is seeded if we need for different
+            //!       environments without having to change the means by with the database is seeded.  We simply
+            //!       provide the application a different configuration for the seeded users and it does it automatically.
             await storageSeed.Seed(app.ApplicationServices.GetService<UserManager<ApplicationUser>>(),
                 app.ApplicationServices.GetService<RoleManager<IdentityRole>>(),
                 app.ApplicationServices.GetService<IOptions<ApplicationSettings>>());
