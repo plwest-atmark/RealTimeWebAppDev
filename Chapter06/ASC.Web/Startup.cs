@@ -49,6 +49,11 @@ namespace ASC.Web
             {
                 options.User.RequireUniqueEmail = true;
             })
+
+
+            //? This is by default set to utilize a SQL Server database, but we are using Azure Cloud Storage
+            //? so have to change it appropriately.
+            //
             // Using the appsettings.json file we will setup our tables for our IdentityUser information.
             // this is configured based on the needs of the application and can be configured in many
             // different ways.  The method used here creates tables that are prefixed with "ASC"
@@ -91,7 +96,7 @@ namespace ASC.Web
         public async void Configure(IApplicationBuilder app, 
             IHostingEnvironment env, 
             ILoggerFactory loggerFactory,
-             IIdentitySeed storageSeed)
+            IIdentitySeed storageSeed)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -109,8 +114,19 @@ namespace ASC.Web
 
             app.UseSession();
             app.UseStaticFiles();
+            
+
+            // We want to able to use the code that is provided by Microsoft ASP.NET Core that is provided
+            // for the security of our web application. This is called the Identity Server and has many built-in
+            // functionality for establishing authentication from users without us having to create custom code for
+            // doing this.  We will use this with our own custom usage of Azure Cloud Storage to store user
+            // information, roles, etc..
             app.UseIdentity();
 
+            //? We have to configure our web appliicatin to utilize the Google Authentication provided by
+            //? the IApplicationBuilder builder interface. We use the appsettings.json file section
+            //? that was created for the Google Authentication to include the ID and Secret(key) to
+            //? ensure secure authentication practices.
             app.UseGoogleAuthentication(new GoogleOptions()
             {
                 ClientId = Configuration["Google:Identity:ClientId"],

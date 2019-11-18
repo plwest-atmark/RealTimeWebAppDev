@@ -86,7 +86,13 @@
     </div>
 </footer>
 
-
+@*
+    
+We add this section to ensure that for our _Layout.cshtml pages, that all the scripts that are placed in the "views" that use
+    this layout will then be passed up to the _MasterLayout.cshtml. This is simply a method to ensure everything is connected and
+    what we place in the views are sent to any layout that this _Layout.cshtml uses.
+    
+*@
 @section Scripts {
     @RenderSection("Scripts", required: false)
 }

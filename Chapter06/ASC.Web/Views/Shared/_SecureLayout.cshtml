@@ -4,6 +4,9 @@
 
 @{
     Layout = "_MasterLayout";
+
+    //! This is where we use our "ClaimsPrincipal" extension method to get the user
+    //!     information and store it in a small object that can be used in this page.
     var currentUser = UserHttpContext.HttpContext.User.GetCurrentUserDetails();
 }
 
@@ -23,6 +26,12 @@
         <li>
             <div class="userView">
                 <div class="background blue-grey lighten-1"></div>
+                @* This is a generic picture, but we could extend the "currentUser" class to have a "path"
+                    to the users actual photo that we could display if needed. This would be a good
+                    thing for you to attempt to do on our own for practice and homework. It uses the
+                    basics of everything that we have done so far, but means you will have to think
+                    about how this is done, and then make the code to do it.
+            *@
                 <a href="#!user"><img class="circle" src="~/images/male.png"></a>
                 <a href="#!name"><span class="white-text name">@currentUser.Name</span></a>
                 <a href="#!email"><span class="white-text email">@currentUser.Email</span></a>
@@ -59,6 +68,7 @@
                 </li>
             </ul>
         </li>
+        @* We all the "id="ancrLogout" to this link so we acn access it directly in our javascript code by id. *@
         <li><a class="collapsible-header" href="#!" id="ancrLogout"><i class="material-icons">exit_to_app</i>Logout</a></li>
 
     </ul>
@@ -119,8 +129,18 @@
 </form>
 
 
+@*
+
+    We add this section to ensure that for our _SecureLayout.cshtml pages, that all the scripts that are placed in the "views" that use
+        this layout will then be passed up to the _MasterLayout.cshtml. This is simply a method to ensure everything is connected and
+        what we place in the views are sent to any layout that this _Layout.cshtml uses.
+
+    We wil update the login to ensure a "logout" and "reset password" action is done when their respective links
+        are clicked.
+
+*@
 @section Scripts{
-@RenderSection("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
     <script type="text/javascript">
         $(function () {
             $('#ancrLogout').click(function () {

@@ -17,7 +17,13 @@ namespace ASC.Web.Data
         Task Seed(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IOptions<ApplicationSettings> options);
     }
 
-
+    /// <summary>
+    /// In this class we will implment the method for "Seeding" the database using the 
+    /// UserManager, RoleManager and our IOptions configuration. The IOptions ApplicationSettings
+    /// will hold the information that the UserManager and RoleManager will use to put the
+    /// initial users and roles into the database. This is why we must update the ApplicationSettings.cs
+    /// and the appsettings.json files to reflect this information.
+    /// </summary>
     public class IdentitySeed : IIdentitySeed
     {
         public async Task Seed(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IOptions<ApplicationSettings> options)

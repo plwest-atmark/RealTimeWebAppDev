@@ -11,7 +11,12 @@ using ASC.Utilities;
 
 namespace ASC.Web.Controllers
 {
-    public class HomeController : Controller
+    /// <summary>
+    /// We update our HomeController to inherit from the AnonymousController since we do not want to have
+    /// any authorization on our Home Page and other pages such as Contacts, About, etc... anyone visiting
+    /// our webpage should have access to these for the purpose of advertisement and information.
+    /// </summary>
+    public class HomeController : AnonymousController
     {
         private IOptions<ApplicationSettings> _settings;
         public HomeController(IOptions<ApplicationSettings> settings)

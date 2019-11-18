@@ -14,6 +14,9 @@ namespace ASC.Web.Models
     /// 
     /// This class will be used to store information about our Application Users. We will expand this later
     /// to hold the important informatino related to users for our system.
+    /// 
+    /// Note that all of the information for Identity is in the Base Class IdentityUser and to view this information
+    /// right-click on the IdentityUser Text below and select "Go To Definition"
     /// </summary>
     public class ApplicationUser : IdentityUser
     {

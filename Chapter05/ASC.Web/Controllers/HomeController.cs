@@ -28,7 +28,7 @@ namespace ASC.Web.Controllers
             // Get Session - As an example on how to reteive a session based on the "key" for that session.
             //  since we just set the session with the "key" Test, we can get the same session using this value.
             //  this is not neccessary and is only left here as an example.
-            //var settings = HttpContext.Session.GetSession<ApplicationSettings>("Test");
+            var settings = HttpContext.Session.GetSession<ApplicationSettings>("Test");
 
 
             // Usage of IOptions

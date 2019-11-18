@@ -4,10 +4,16 @@ using Microsoft.Extensions.Options;
 using MimeKit;
 using System.Threading.Tasks;
 
+/// <summary>
+/// This entire class has to be updated from the "generic" message sender to utilize the Gmail
+/// SMTP sender that we have configured to use for the "reset password" actions of our web application.
+/// </summary>
 namespace ASC.Web.Services
 {
     public class AuthMessageSender : IEmailSender, ISmsSender
     {
+        // we need to injec the ApplicationSettings into this service so we have our SMTP configuration
+        // information. 
         private IOptions<ApplicationSettings> _settings;
         public AuthMessageSender(IOptions<ApplicationSettings> settings)
         {

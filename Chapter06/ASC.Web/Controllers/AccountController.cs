@@ -17,13 +17,47 @@ using ASC.Models.BaseTypes;
 
 namespace ASC.Web.Controllers
 {
+    /// <summary>
+    /// AccountController has default controller actions that are used to perform various authentication-related 
+    /// activities. Actions are used for the following: 
+    ///     Registration, 
+    ///     Login, 
+    ///     Logout, 
+    ///     External Sources Login, 
+    ///     Forgot Password, 
+    ///     Reset Password, 
+    ///     Two-Factor Authentication, 
+    ///     and Send and Verify Codes.
+    ///     
+    /// This is all built into the ASP.NET Core framework and we don't have to worry about how all of this is done
+    ///     but need to know how to use and and ensure that it is being used properly.
+    /// </summary>
     [Authorize]
     public class AccountController : Controller
     {
+        //! This is part of the Microsoft.AspNetCore.Identity API provided by Microsoft, 
+        //!     and it provides the APIs for managing users in a persistence store.
+        //! This simply means that it is a way for us to control and "manage" users within a database. 
+        //!     (persistance store = database, file, etc... anything that stays around after the application ends).
         private readonly UserManager<ApplicationUser> _userManager;
+
+        //! This is part of the Microsoft.AspNetCore.Identity API provided by Microsoft, 
+        //!     and it provides the APIs to manage sign-in operations for users from different sources.
+        //! This simply means that all of the login/logout functionality has already been coded for us by
+        //!     Microsoft so we do not have to do this ourselves, we simply use their own methods for doing this
+        //!     and everything will work as expected as long as we use it properly.
         private readonly SignInManager<ApplicationUser> _signInManager;
+
+        //! Used by AccountController to send e-mail for account confirmation and password resets.
         private readonly IEmailSender _emailSender;
+        //! Used for two-factor authentication. Two-factor authentication is when you log into a web site and it
+        //!     sends your phone or email address a code that you have to enter to continue the login process.
+        //!     This has been a new feature in many websites to ensure account security.  It's possible that someone
+        //!     can hack an account to get a password, but less likely that they also have your phone to recieve
+        //!     a code to continue the login process.
         private readonly ISmsSender _smsSender;
+
+
         private readonly ILogger _logger;
         private readonly string _externalCookieScheme;
 
@@ -72,7 +106,10 @@ namespace ASC.Web.Controllers
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                     return View(model);
                 }
+                
 
+                // We will modify the original login to provide the user with a message if their account
+                // has been locked by too many failed attempts at logging into the system.
                 var isActive = Boolean.Parse(user.Claims.SingleOrDefault(p => p.ClaimType == "IsActive").ClaimValue);
                 if (!isActive)
                 {
@@ -85,7 +122,10 @@ namespace ASC.Web.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation(1, "User logged in.");
-
+                    // We update our login so after a user logs into the system, it will direct them to their "dashboard"
+                    //  This is a good way to ensure the use knows that they have succeeded in logging into the system. 
+                    //  If we just leave them on the login page, it would cause confusion, so we ensure they go to a
+                    //  secure part of the website that is relevant to their activities for logging into the system.
                     if (!String.IsNullOrWhiteSpace(returnUrl))
                         return RedirectToLocal(returnUrl);
                     else

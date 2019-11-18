@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace ASC.Web.Models.AccountViewModels
 {
+    /// <summary>
+    /// Our LoginViewModel will store all the informaiton that is required for logging into the system, to include
+    /// a boolean that will be remembered for future visits to the website. 
+    /// 
+    /// As this is the standard viewmodel for a login page, we will not change it and use it as it is now.
+    /// </summary>
     public class LoginViewModel
     {
         [Required]

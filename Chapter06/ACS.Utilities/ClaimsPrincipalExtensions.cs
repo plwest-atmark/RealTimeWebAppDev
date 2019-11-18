@@ -13,7 +13,13 @@ namespace ASC.Utilities
         public bool IsActive { get; set; }
         public string[] Roles { get; set; }
     }
-
+    /// <summary>
+    /// We create this "extension" too the "ClaimsPrincipal" so that we do not have to have access to the 
+    /// LARGE HttpContext.User information, but can instead use a smaller object for passing the information
+    /// about the currently logged in user. This is an effective way to both speed up the web site for better
+    /// performance, and also make it easier to manange the user information since it's placed in a specific
+    /// location for our use in the application.
+    /// </summary>
     public static class ClaimsPrincipalExtensions
     {
         public static CurrentUser GetCurrentUserDetails(this ClaimsPrincipal principal)

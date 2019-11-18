@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ASC.Web.Configuration.ApplicationSettings">
+    <Position X="19.5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACQAhAAAAAAAAAAAEAAAQgAACAEAAAAACgAAAAA=</HashCode>
+      <FileName>Configuration\ApplicationSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Controllers.AccountController">
+    <Position X="7.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEABAAhIAAAAAAAAAFQEgIAJASBEIAAABMRAAAgAAQ=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Controllers.AnonymousController">
+    <Position X="9.75" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\AnonymousController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Controllers.BaseController">
+    <Position X="5.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\BaseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Controllers.DashboardController">
+    <Position X="5.75" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\DashboardController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Controllers.HomeController">
+    <Position X="9.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEQEAiAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Controllers.ManageController">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="ASC.Web.Controllers.ManageController.ManageMessageId" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\ManageController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAQAAAgAAAAEFBAAAAIAGAAMABAEEEgAAgAAQ=</HashCode>
+      <FileName>Controllers\ManageController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Data.Migrations.CreateIdentitySchema">
+    <Position X="17.75" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAI=</HashCode>
+      <FileName>Data\Migrations\00000000000000_CreateIdentitySchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Data.Migrations.ApplicationDbContextModelSnapshot">
+    <Position X="17.75" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Data\Migrations\ApplicationDbContextModelSnapshot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Data.ApplicationDbContext">
+    <Position X="16" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\ApplicationDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Data.IdentitySeed" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\StorageDataSeed.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ASC.Web.Models.AccountViewModels.CustomerRegistrationViewModel">
+    <Position X="19.5" Y="2.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels\CustomerRegistrationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.AccountViewModels.CustomersViewModel">
+    <Position X="21.25" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Models\AccountViewModels\CustomersViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.AccountViewModels.ExternalLoginConfirmationViewModel">
+    <Position X="12.5" Y="3.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels\ExternalLoginConfirmationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.AccountViewModels.ForgotPasswordViewModel">
+    <Position X="16" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels\ForgotPasswordViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.AccountViewModels.LoginViewModel">
+    <Position X="21.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAgAAA=</HashCode>
+      <FileName>Models\AccountViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.AccountViewModels.ProfileViewModel">
+    <Position X="16" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels\ProfileViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.AccountViewModels.RegisterViewModel">
+    <Position X="6.25" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountViewModels\RegisterViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.AccountViewModels.ResetPasswordViewModel">
+    <Position X="21.25" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAgAAAAAAAAAAACAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountViewModels\ResetPasswordViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.AccountViewModels.SendCodeViewModel">
+    <Position X="12.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAIAAAAgAAA=</HashCode>
+      <FileName>Models\AccountViewModels\SendCodeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.AccountViewModels.ServiceEngineerRegistrationViewModel">
+    <Position X="5.75" Y="4" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAIAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels\ServiceEngineerRegistrationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.AccountViewModels.ServiceEngineerViewModel">
+    <Position X="14.25" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Models\AccountViewModels\ServiceEngineerViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.AccountViewModels.VerifyCodeViewModel">
+    <Position X="19.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAEAAAAAAAgAAAAAAAAAAAAAAIAAAAgAAA=</HashCode>
+      <FileName>Models\AccountViewModels\VerifyCodeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.ManageViewModels.AddPhoneNumberViewModel">
+    <Position X="14.25" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ManageViewModels\AddPhoneNumberViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.ManageViewModels.ChangePasswordViewModel">
+    <Position X="14.25" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\ManageViewModels\ChangePasswordViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.ManageViewModels.ConfigureTwoFactorViewModel">
+    <Position X="16" Y="2.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ManageViewModels\ConfigureTwoFactorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.ManageViewModels.FactorViewModel">
+    <Position X="14.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Models\ManageViewModels\FactorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.ManageViewModels.IndexViewModel">
+    <Position X="19.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAQAAAAAAAAAAAAAAQAAAEAEA=</HashCode>
+      <FileName>Models\ManageViewModels\IndexViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.ManageViewModels.ManageLoginsViewModel">
+    <Position X="14.25" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Models\ManageViewModels\ManageLoginsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.ManageViewModels.RemoveLoginViewModel">
+    <Position X="19.5" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\ManageViewModels\RemoveLoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.ManageViewModels.SetPasswordViewModel">
+    <Position X="16" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\ManageViewModels\SetPasswordViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.ManageViewModels.VerifyPhoneNumberViewModel">
+    <Position X="21.25" Y="5.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ManageViewModels\VerifyPhoneNumberViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Models.ApplicationUser">
+    <Position X="21.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ApplicationUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Services.AuthMessageSender" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Services\MessageServices.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ASC.Web.Program">
+    <Position X="17.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASC.Web.Startup">
+    <Position X="17.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAgAAACAAAAAA=</HashCode>
+      <FileName>Startup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ASC.Web.Data.IIdentitySeed">
+    <Position X="14.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\StorageDataSeed.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ASC.Web.Services.IEmailSender">
+    <Position X="12.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Services\IEmailSender.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ASC.Web.Services.ISmsSender">
+    <Position X="16" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ISmsSender.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
