@@ -358,6 +358,9 @@ namespace ASC.Web.Controllers
                 if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
+                    //! This is important because someone attempting to hack your servers can
+                    //!     use this kind of information to know that there is a user with the email they
+                    //!     tried when "resetting" password.
                     return View("ResetPasswordEmailConfirmation");
                 }
 
